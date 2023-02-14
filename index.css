@@ -1,0 +1,197 @@
+/*html{  font-size: 62.5%;}*/
+:root{
+    --bk1:#1d6086;
+    --bk2:#183873;
+    --bk3:#20989d;
+    --bk4: #f9f9f9;
+    --bk5: #05251e;
+    --bk6: #0c2c2f;
+    --bk7: #c26829;
+}
+
+body, div{
+    box-sizing: border-box;
+    text-align: center; border: none; 
+}
+
+section{
+    display: flex; flex-direction: column; justify-content: center; align-items: center; align-content: center;
+    box-sizing: border-box;
+    display: block;
+    height: 100vh; 
+    max-width: 2040px; margin: 0% auto; padding: 4vh 0% 0% 0%;
+    background-image: url("./img/Captura\ de\ pantalla_20230105_170742.png");
+    background-position: center; background-repeat: repeat;
+    /* background-size: 50vh  cover; */
+}
+.box-calculadora { 
+    position: sticky; z-index: 5;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.4fr 1fr 1fr 1fr 1fr 1fr;
+    grid-row-gap: 4px; 
+    grid-column-gap: 0.8px;
+    grid-template-areas: 
+    "hoja  hoja  hoja  hoja"
+    "star0 star1 star2 sim0"
+    "num1  num2  num3  sim1"
+    "num4  num5  num6  sim2"
+    "num7  num8  num9  sim3"
+    "end0  num0  end1  sim4"  
+    ;
+    min-height: 72vh; 
+    /* min-width: 32rem;  */
+    width: 33rem;
+    /* max-width: 40% ; */
+    margin: 0rem auto; padding: 1.5rem; border-radius: 9px;
+    color: rgb(255, 255, 255); background-color:  #213f4b;
+    font-size: 1.6rem; 
+}
+@media (max-height: 500px){
+    section{
+        padding: 7px 0rem;
+    }
+    .box-calculadora{
+        /* box-sizing: border-box;   */
+
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 20% 16%  16% 16% 16% 16%;
+        grid-row-gap: 3px; 
+        grid-column-gap: 0.7px;
+
+        /* height: 80vh;  */ max-height: 95%; 
+        /* width: 60% ; */
+        padding: 1rem 10px 1.5rem 10px;
+    }
+    .hoja{ 
+   
+        overflow: hidden; /*ME OCULTA EL EXEDENTE DE CONTENIDO*/ background-color: #c26829;
+        grid-area: hoja; 
+        display: flex; flex-flow: row wrap;align-items: flex-end; justify-content: end;
+        /* box-sizing: border-box; */
+    
+        /* min-height: 99%; min-width: 99%; */
+        padding: 0px 15px 0px 0px; 
+        border: 1px solid #333; border-right: none; border-bottom: none; 
+        margin: 0px auto 0rem auto; 
+        
+        font-size: 2.2rem!important;
+    }
+    .items{    
+        
+        height: 90%; width: 90%; 
+
+    }
+    .sim{
+      
+        background-color: var(--bk4);
+        color: #fff; 
+        font-size: 2.8rem!important; 
+        font-weight: 400!important;
+    }
+
+}
+
+@media (max-width: 560px){
+    .box-calculadora{
+        box-sizing: border-box;
+        grid-row-gap: 3px; 
+        grid-column-gap: 0.8px;
+        max-width: 95% ; 
+        padding: 1rem;
+        margin: 0% auto;
+    }
+
+}
+@media (max-width: 300px){
+    .box-calculadora{
+      font-size: 1.3rem!important;
+    }
+    .hoja{ 
+        
+        font-size: 2rem!important;
+    }
+    .items{    
+        height: 90%; width: 90%; 
+
+    }
+    .sim{
+ 
+        font-size: 2.4rem!important; 
+        font-weight: 400!important;
+    }
+   
+
+}
+    /* @media (max-height: 820px) and (max-width:1180px){
+    .box-calculadora{
+        max-width: 50% ; 
+    }
+} */
+
+.hoja { 
+   
+    overflow: hidden; /*ME OCULTA EL EXEDENTE DE CONTENIDO*/ 
+    grid-area: hoja; 
+    display: flex; flex-flow: row wrap;align-items: flex-end; justify-content: end;
+    /* box-sizing: border-box; */
+
+    min-height: 99%; min-width: 99%;
+    padding: 0px 15px 0px 0px; 
+    border: 1px solid #333; border-right: none; border-bottom: none; 
+    margin: 0px auto 0rem auto; 
+
+    background-color: rgb(255, 255, 255); color: #333; 
+    font-size: 3rem;
+}
+.items{    
+    /* box-sizing: border-box; */
+    display: flex; align-items: center; justify-content: center;
+
+    height: 90%; width: 90%; 
+    border-radius: 8px;
+    border: none; margin: auto;
+}
+.items:active{
+    opacity: 0.7; height: 89%; 
+}
+.nums{
+    background-color: var(--bk3); 
+}
+.sim{
+    
+    background-color: var(--bk7);
+    color: #fff; 
+    font-size: 3.5rem; font-weight: 600;
+}
+.nada{
+    background-color: var(--bk1);
+}
+.nada:active{
+    background-color: rgb(15, 14, 14);
+}
+.star0{
+    grid-area: star0;
+}
+.star1{
+    grid-area: star1;
+}
+.star2{
+    grid-area: star2;
+}
+.sim0{
+    grid-area: sim0;
+}
+.sim1{
+    grid-area: sim1;
+}
+.sim2{
+    grid-area: sim2;
+}
+.sim3{
+    grid-area: sim3;
+}
+.sim4{
+    grid-area: sim4; 
+    background-color: var(--bk4); color: #333;
+}
